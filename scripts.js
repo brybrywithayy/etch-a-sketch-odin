@@ -17,6 +17,7 @@ const gridCanvas = document.querySelector("#gridContainer");
 function createDiv() {
     const newBox = document.createElement("div");
     newBox.classList.add("gridBoxElement");
+    newBox.setAttribute("draggable", "false"); // still having major problems with mousedown not triggering
     // listen for mouseover or mousedown - paint conditions
     newBox.addEventListener("mousedown", changeBackgroundColor);
     newBox.addEventListener("mouseover", changeBackgroundColor);
@@ -71,10 +72,9 @@ function isMousedown(e) {
 function changeBackgroundColor(e) {
     
     if (isMouseover(e) === true) {
-        e.classList.add("gridBoxElementPainted");
-        // if (isMousedown(e) === true) {
-        //     e.classList.add("gridBoxElementPainted");
-        // } 
+        if (isMousedown(e) === true) {
+            e.classList.add("gridBoxElementPainted");
+        } 
     }
 }
 
