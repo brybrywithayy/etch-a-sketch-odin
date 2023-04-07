@@ -19,7 +19,8 @@ function createDiv() {
     newBox.classList.add("gridBoxElement");
     newBox.setAttribute("draggable", "false"); // still having major problems with mousedown not triggering
     // listen for mouseover or mousedown - paint conditions
-    newBox.addEventListener("mousedown", changeBackgroundColor);
+    newBox.addEventListener("mouseover", changeBackgroundColor);
+    // newBox.addEventListener("mouseover", changeBackgroundColor);
     gridCanvas.appendChild(newBox);
 }
 
@@ -56,12 +57,8 @@ function createGrid(userGridSize) {
 // takes an event from event listeners attached to each grid in the canvas
 function changeBackgroundColor(e) {
     
-    if (e.type === "mouseover") {
-        if (e.onmousedown) {
-            e.target.classList.add("gridBoxElementPainted");
-            e.target.classList.remove("gridBoxElement");
-        }
-    }
+    e.target.classList.add("gridBoxElementPainted");
+    e.target.classList.remove("gridBoxElement");
 }
 
 createGrid(DEFAULT_CANVAS_SIZE);
