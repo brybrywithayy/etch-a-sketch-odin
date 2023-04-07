@@ -7,8 +7,15 @@
         <script defer src="scripts.js"></script>
     </head>
     <body>
+        <div id="header">
+            <h2>Odin Project Etch-a-Sketch</h2>
+        </div>
+        <div id="options">
+            <input type="text" placeholder="Enter number of columns" onchange="createGrid(this.value)">
+        </div>
         <!-- Need a 16 x 16 grid of square divs in the DOM -->
         <div id="gridContainer">
         </div>
+
     </body>
 </html>

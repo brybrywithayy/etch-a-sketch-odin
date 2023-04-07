@@ -1,5 +1,15 @@
+#header h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#options {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
 #gridCanvas {
-    
+    display: grid;
 }
 
 .gridBoxElement {
